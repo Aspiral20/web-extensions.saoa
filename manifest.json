@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "SAOA",
+  "version": "0.1",
+  "description": "A cross-platform browser extension designed to streamline and personalize your outreach process on platforms like Whop, Telegram, Discord, and more.",
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": {
+      "32": "saoa_32.png",
+      "48": "saoa_48.png",
+      "64": "saoa_64.png",
+      "128": "saoa_128.png"
+    }
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self';"
+  }
+}
+
