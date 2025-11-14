@@ -4,10 +4,10 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   output: 'export',
   distDir: "out",
-  images: {
-    unoptimized: true,
-  },
-  // reactStrictMode: true,
+  // images: {
+  //   unoptimized: true,
+  // },
+  reactStrictMode: true,
   // assetPrefix: process.env.NODE_ENV === 'production' ? '/.' : '',
   // trailingSlash: true,
 };

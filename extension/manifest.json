@@ -12,8 +12,21 @@
       "128": "saoa_128.png"
     }
   },
-  "content_security_policy": {
-    "extension_pages": "script-src 'self'; object-src 'self';"
-  }
+  "icons": {
+    "48": "saoa_48.png",
+    "128": "saoa_128.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["storage", "activeTab", "scripting", "tabs", "cookies"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "host_permissions": ["http://localhost:3000/*", "https://*/*"]
 }
 
