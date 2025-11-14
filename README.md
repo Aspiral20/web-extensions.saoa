@@ -1,15 +1,11 @@
 ## SAOA - Smart AI Outreach Automation
 
-To build the project run:
+SAOA (Smart AI Outreach Automation) is a cross-platform browser extension designed to streamline and personalize your
+outreach process on platforms like Whop, Telegram, Discord, and more.
 
-```bash
-yarn build
-```
+With SAOA, users can create a customized library of messages and automatically send them to potential customers. Each
+outreach interaction delivers a unique message, intelligently selected at random from the user’s list — ensuring your
+communication feels authentic and human-like, while maintaining automation efficiency.
 
-It will generate a `out/` directory with all the files needed to run the extension in the browser.
-
-Upload the `out/` directory to the browser extensions (`chrome://extensions/`) in developer mode.
-
-Go to browser > extensions > SAOA to see the result.
-
-After you made some changes, run `yarn build` again and reload the extension in `chrome://extensions/`.
+Whether you’re promoting products, engaging communities, or connecting with new leads, SAOA empowers you to automate
+smart, personalized conversations across multiple platforms — all from one intuitive interface.
