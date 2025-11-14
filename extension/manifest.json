@@ -17,16 +17,30 @@
     "128": "saoa_128.png"
   },
   "background": {
-    "service_worker": "background.js"
+    "service_worker": "extension/background.js",
+    "type": "module"
   },
-  "permissions": ["storage", "activeTab", "scripting", "tabs", "cookies"],
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting",
+    "tabs",
+    "cookies"
+  ],
   "content_scripts": [
     {
-      "matches": ["<all_urls>"],
-      "js": ["content.js"],
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "extension/content.js"
+      ],
       "run_at": "document_end"
     }
   ],
-  "host_permissions": ["http://localhost:3000/*", "https://*/*"]
+  "host_permissions": [
+    "http://localhost:3000/*",
+    "https://*/*"
+  ]
 }
 

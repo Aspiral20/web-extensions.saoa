@@ -1,3 +1,3 @@
-chrome.runtime.sendMessage({type: "availablePlatform"}, function(response: { message: string }) {
-  console.log(response.message);
+chrome.runtime.sendMessage({type: "checkPlatform"}, function(response) {
+  console.log(response)
 });
