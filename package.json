@@ -5,10 +5,10 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "build-v1": "next build && node scripts/build-extension.mjs",
+    "ext:build": "tsc -p tsconfig.extension.json",
+    "build-v1": "next build && node scripts/build-extension.mjs && tsc -p tsconfig.extension.json",
     "start": "next start",
-    "lint": "eslint",
-    "ext:build": "tsc -p tsconfig.extension.json"
+    "lint": "eslint"
   },
   "dependencies": {
     "next": "16.0.3",

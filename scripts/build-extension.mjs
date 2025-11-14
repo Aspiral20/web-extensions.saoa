@@ -76,7 +76,7 @@ async function moveAndCopy() {
     }
 
     // Copy manifest.json into out/
-    const srcFile = 'manifest.json';
+    const srcFile = 'extension/manifest.json';
     const destFile = join(outDir, 'manifest.json');
 
     if (!(await exists(srcFile))) {

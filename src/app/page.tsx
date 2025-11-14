@@ -1,31 +1,32 @@
 'use client';
 
 import React from 'react';
-import { pushHash, Link } from '@/hooks/useHashRouter';
+import Link from "next/link";
+// import { pushHash, Link } from '@/hooks/useHashRouter';
 
 export default function Home() {
   // use hash-based navigation inside extension
 
   // Check localStorage for selected platforms and route accordingly
-  function handleNext(e?: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>) {
-    // When called from a Link onClick, we can prevent the Link fallback by calling e.preventDefault()
-    try {
-      const raw = typeof window !== 'undefined' ? localStorage.getItem('saoa_platforms_v1') : null;
-      if (raw) {
-        const parsed = JSON.parse(raw);
-        if (Array.isArray(parsed) && parsed.length > 0) {
-          // prevent the Link fallback navigation
-          e?.preventDefault();
-          pushHash('/dashboard');
-          return;
-        }
-      }
-    } catch {
-      // if any error, fall back to onboarding
-    }
-    // if JS is running we'll push hash to onboarding; if not, the Link fallback will navigate to onboarding.html
-    pushHash('/onboarding');
-  }
+  // function handleNext(e?: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>) {
+  //   // When called from a Link onClick, we can prevent the Link fallback by calling e.preventDefault()
+  //   try {
+  //     const raw = typeof window !== 'undefined' ? localStorage.getItem('saoa_platforms_v1') : null;
+  //     if (raw) {
+  //       const parsed = JSON.parse(raw);
+  //       if (Array.isArray(parsed) && parsed.length > 0) {
+  //         // prevent the Link fallback navigation
+  //         e?.preventDefault();
+  //         pushHash('/dashboard');
+  //         return;
+  //       }
+  //     }
+  //   } catch {
+  //     // if any error, fall back to onboarding
+  //   }
+  //   // if JS is running we'll push hash to onboarding; if not, the Link fallback will navigate to onboarding.html
+  //   pushHash('/onboarding');
+  // }
 
   return (
     <main className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-6">
@@ -37,12 +38,6 @@ export default function Home() {
           <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">
             Automate personalized outreach across Whop, Telegram, Discord and more — without losing the human touch.
           </p>
-          <Link
-            href="#test"
-            className="inline-flex items-center px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
-          >
-            Test
-          </Link>
         </header>
 
         <section className="grid gap-6 md:grid-cols-2">
@@ -72,20 +67,25 @@ export default function Home() {
 
             <div className="mt-6 flex items-center gap-3">
               {/* Use our Link component so JS hydration intercepts clicks and we also get a static fallback href in the exported HTML */}
+              {/*<Link*/}
+              {/*  href="/onboarding"*/}
+              {/*  // onClick={handleNext}*/}
+              {/*  className="inline-flex items-center px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"*/}
+              {/*>*/}
+              {/*  Next →*/}
+              {/*</Link>*/}
+
               <Link
-                href="/onboarding"
-                onClick={handleNext}
-                className="inline-flex items-center px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                href="/messages"
+                className="inline-flex items-center px-4 py-2 border border-gray-200 dark:border-gray-700 rounded-md text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-50"
               >
-                Next →
+                Messages
               </Link>
 
-              <Link href="/messages" className="inline-flex items-center px-4 py-2 border border-gray-200 dark:border-gray-700 rounded-md text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-50">Messages</Link>
-
-              <Link href="/platforms" className="inline-flex items-center px-3 py-2 text-sm text-gray-600 hover:underline">Platforms</Link>
-             </div>
-           </div>
-         </section>
+              {/*<Link href="/platforms" className="inline-flex items-center px-3 py-2 text-sm text-gray-600 hover:underline">Platforms</Link>*/}
+            </div>
+          </div>
+        </section>
 
         <footer className="mt-8 text-xs text-gray-500">
           Tip: Use the Messages page to add templates. You can clear the form after adding new messages for rapid entry.

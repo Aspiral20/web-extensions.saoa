@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import HashRouter from '../components/HashRouter';
+// import HashRouter from '../components/HashRouter';
 import Providers from "@/lib/providers";
 
 const geistSans = Geist({
